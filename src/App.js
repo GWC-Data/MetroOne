@@ -5,13 +5,17 @@ import { Scrollbar } from './components/Scrollbar';
 import Dashboard from './components/Chart/Chart';
 import Sidebar from './components/Sidebar';
 import { Header } from './components/Header';
+import LayoutRoyal from './components/Layout/LayoutRoyal';
+import NavBar from './components/Layout/NavBar';
 
 function App() {
   return (
     <div className="App">
- <Header/>
+ {/* <Header/>
       <Dashboard/>
-      <Sidebar/>
+      <Sidebar/> */}
+      <NavBar/>
+      <LayoutRoyal/>
     </div>
   );
 }

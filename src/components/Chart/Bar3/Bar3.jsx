@@ -22,6 +22,16 @@ export default function GridDemo() {
       layout="horizontal"
       grid={{ vertical: true }}
       {...chartSetting}
+      sx={{
+        // Set axis label colors to white
+        '& .MuiXAxis-label, & .MuiYAxis-label': {
+          color: 'white',
+        },
+        // Set tick label colors to white
+        '& .MuiXAxis-tick, & .MuiYAxis-tick': {
+          color: 'white',
+        },
+      }}
     />
   );
 }

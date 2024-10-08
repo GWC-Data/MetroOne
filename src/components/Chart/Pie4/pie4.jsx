@@ -4,11 +4,11 @@ import { desktopOS, valueFormatter } from './Chart4data';
 
 export default function PieArcLabel() {
   const colors = [
-    'rgba(66, 134, 244, 0.8)', // Windows
-    'rgba(255, 155, 0, 0.8)',  // OS X
-    'rgba(0, 197, 98, 0.8)',    // Linux
-    'rgba(255, 61, 61, 0.8)',   // Chrome OS
-    'rgba(128, 128, 128, 0.8)', // Other
+    'rgba(186, 5, 23, 0.8)', // Windows
+    'rgba(216, 58, 0, 0.8)',  // OS X
+    'rgba(117, 38, 227, 0.8)',    // Linux
+    'rgba(255, 83, 138, 0.8)',   // Chrome OS
+    'rgba(6, 165, 154, 0.8)', // Other
   ];
   return (
     <PieChart
@@ -24,6 +24,11 @@ export default function PieArcLabel() {
       sx={{
         [`& .${pieArcLabelClasses.root}`]: {
           fontWeight: 'bold',
+          color: 'white', // Change label text color to white
+        },
+        // Additional styling for the values, if necessary
+        [`& .${pieArcLabelClasses.label}`]: {
+          color: 'white', // Ensure the values are white
         },
       }}
       {...size}

@@ -7,6 +7,7 @@ export const desktopOS = [
   {
     label: 'Windows',
     value: 72.72,
+    
   },
   {
     label: 'OS X',

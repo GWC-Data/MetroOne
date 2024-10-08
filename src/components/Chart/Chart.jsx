@@ -28,12 +28,24 @@ const Dashboard = () => {
           <p className="text-2xl">193.3 Cr</p>
           <Bardataset />
         </div>
+        <div className="col-span-2 p-4 bg-gradient-to-r from-purple-500 to-purple-900 rounded-lg">
+          <h2 className="text-lg font-bold">Enquiries</h2>
+          <p className="text-xl">347</p>
+          <RetroGridDemo/>
+          
+        </div>
         
-        <div className="col-span-2 p-4 bg-gray-700 rounded-lg">
+        
+        <div className="col-span-2 p-4 bg-gradient-to-r from-purple-500 to-purple-900 rounded-lg">
           <h2 className="text-lg font-bold">Total Profit</h2>
           <p className="text-2xl">65.1 Cr</p>
           {/* <Bardataset />  */}
           <PieShadcn/>
+        </div>
+        <div className="col-span-2 p-4 h-64 pl-[38%] bg-gradient-to-r  from-purple-500 to-purple-900 rounded-lg flex items-center">
+          {/* <h2 className="text-lg font-bold">Vehicle Qty</h2>
+          <p className="text-2xl">964</p> */}
+         <NumberTickerDemo />
         </div>
         
         <div className="col-span-1 p-4 bg-gray-700 rounded-lg">
@@ -42,19 +54,10 @@ const Dashboard = () => {
           {/* <PieShadcn/> */}
         </div>
         
-        <div className="col-span-1 p-4 bg-gradient-to-r h-64 pl-[28%] from-purple-500 to-purple-900 rounded-lg flex items-center">
-          {/* <h2 className="text-lg font-bold">Vehicle Qty</h2>
-          <p className="text-2xl">964</p> */}
-         <NumberTickerDemo />
-        </div>
+      
 
         
-        <div className="col-span-2 p-4 bg-gradient-to-r from-purple-500 to-purple-900 rounded-lg">
-          <h2 className="text-lg font-bold">Enquiries</h2>
-          <p className="text-xl">347</p>
-          <RetroGridDemo/>
-          
-        </div>
+   
         
         <div className="col-span-2 p-4 bg-gray-700 rounded-lg">
           <h2 className="text-lg font-bold">Target Sales</h2>

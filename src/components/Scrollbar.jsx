@@ -76,7 +76,7 @@ export function Scrollbar() {
   const performanceCardStyle = {
     position: 'fixed',
     top: '0px',
-    left: isVisible ? '243px' : '-300px',
+    left: isVisible ? '17%' : '-300px',
     width: '400px',
     backgroundColor: '#fff',  
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
