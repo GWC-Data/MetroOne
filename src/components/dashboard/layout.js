@@ -3,14 +3,6 @@ import React from "react";
 const DashboardLayout1 = () => {
   return (
     <div className="bg-gray-50 p-8">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
-        <div className="text-right">
-          <p className="text-gray-600">Welcome, John!</p>
-          <p className="text-gray-600">You have new notifications.</p>
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Top Left Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-blue-500">
