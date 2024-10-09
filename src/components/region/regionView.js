@@ -1,87 +1,86 @@
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from "react";
-import ButtonLink from "./buttonLink";
 import DashboardLayout1 from "../dashboard/layout";
-
-const Region = () => {
+const Slides = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const sections = [
+
+  // Logging active title when slide changes
+  useEffect(() => {
+    console.log(`Active Slide: ${slides[activeSlide].title}`);
+  }, [activeSlide]);
+
+  const slides = [
     {
-      id: 0,
-      title: "Asia",
-      content: "A diverse continent with rich cultures.",
+      title: "ASIA",
       component: <DashboardLayout1 />,
     },
     {
-      id: 1,
-      title: "Europe",
-      content: "Known for its art, architecture, and history.",
+      title: "EUROPE",
       component: <DashboardLayout1 />,
     },
     {
-      id: 2,
-      title: "Japan",
-      content: "Famous for its technology and traditional culture.",
+      title: "North America",
       component: <DashboardLayout1 />,
     },
     {
-      id: 3,
-      title: "Australia",
-      content: "Home to unique wildlife and stunning landscapes.",
+      title: "South Asia",
       component: <DashboardLayout1 />,
     },
     {
-      id: 4,
-      title: "Austria",
-      content: "Renowned for its classical music and beautiful Alps.",
+      title: "Middle East and North Africa",
       component: <DashboardLayout1 />,
     },
   ];
 
-  const handleSlideClick = (id) => {
-    setActiveSlide(id);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      const slides = document.querySelectorAll(".slide-content");
-      slides.forEach((slide) => {
-        slide.style.width = `${
-          window.innerWidth > 480 ? slide.offsetWidth : "100%"
-        }`;
-      });
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [activeSlide]);
-
   return (
-    <div className="flex flex-col w-full h-screen">
-      <div className="flex overflow-hidden rounded-lg shadow-lg w-full h-screen">
-        <ul className="flex transition-transform duration-500 w-full">
-          {sections.map((section) => (
+    <div className="w-full h-screen">
+      <div className="overflow-hidden h-full">
+        <ul className="flex h-full">
+          {slides.map((slide, index) => (
             <li
-              key={section.id}
-              className={`relative list-none transition-all duration-500 ${
-                activeSlide === section.id ? "w-full" : "w-[40px]"
-              } h-full bg-gradient-to-b from-purple-200 to-purple-300 text-white overflow-hidden border-2 border-white flex items-center justify-center`}
-              onClick={() => handleSlideClick(section.id)}
+              key={index}
+              className={`list-none transition-all duration-500 ease-linear overflow-hidden h-full relative ${
+                activeSlide === index ? "w-[100%]" : "w-[3%]"
+              } ${`bg-gradient-to-r ${
+                index === 0
+                  ? "from-cyan-500 to-blue-500"
+                  : index === 1
+                  ? "from-yellow-400 to-orange-500"
+                  : index === 2
+                  ? "from-pink-400 to-red-500"
+                  : index === 3
+                  ? "from-purple-500 to-indigo-500"
+                  : "from-green-400 to-lime-500"
+              }`} rounded-none`}
             >
-              <ButtonLink onClick={() => handleSlideClick(section.id)}>
-                <div className="transform rotate-90 origin-left whitespace-nowrap">
-                  {section.title}
+              {activeSlide !== index && (
+                <a
+                  href="#"
+                  className="block h-full relative"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveSlide(index);
+                  }}
+                >
+                  <span className="text-white font-bold absolute top-[10%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center text-lg whitespace-nowrap w-full">
+                    {slide.title}
+                  </span>
+                </a>
+              )}
+              {activeSlide === index && (
+                <div className="block text-white h-full overflow-auto">
+                  {/* <h2 className="text-5xl font-extrabold mb-4">
+                    {slide.title}
+                  </h2> */}
+                  {slide.component}
                 </div>
-              </ButtonLink>
+              )}
             </li>
           ))}
         </ul>
-        {/* Render the active section's content */}
-        <div className="flex-grow">{sections[activeSlide].component}</div>
       </div>
     </div>
   );
 };
 
-export default Region;
+export default Slides;
