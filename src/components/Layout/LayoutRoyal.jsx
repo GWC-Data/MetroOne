@@ -6,7 +6,6 @@ import { Scrollbar } from '../Scrollbar';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import PerformanceCard from '../PerformanceCard';
-import SwipeableEdgeDrawer from './SwipeableEdgeDrawer';
 
 const Dashboard = () => {
     // Example Data
@@ -48,10 +47,9 @@ const Dashboard = () => {
                 {/* Total Sales, Profit, Target */}
                 <Grid item xs={3} style={{ width: '250px', height: '150px', padding: 2, }}>
                   
-                <Card style={{width: '250px', height: '150px', padding: 2,  backgroundColor:'gray'}}>
+                <Card style={{ backgroundColor:'gray'}}>
                         <Typography>Total Sales: 193.3 Cr</Typography>
-                        <Scrollbar />
-                        {/* <SwipeableEdgeDrawer/> */}
+                        {/* <Scrollbar /> */}
                     </Card>
              
                 </Grid>

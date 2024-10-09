@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardLayout1 = () => {
   return (
-    <div className="bg-gray-50 p-8">
+    <div className="bg-gray-900 p-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Top Left Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-blue-500">
