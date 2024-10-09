@@ -68,7 +68,7 @@ const Slides = () => {
                 </a>
               )}
               {activeSlide === index && (
-                <div className="block text-white h-full overflow-auto">
+                <div className="block text-white h-full overflow-auto no-scrollbar">
                   {/* <h2 className="text-5xl font-extrabold mb-4">
                     {slide.title}
                   </h2> */}
