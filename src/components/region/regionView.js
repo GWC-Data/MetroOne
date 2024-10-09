@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from "react";
 import DashboardLayout1 from "../dashboard/layout";
+import Dashboard from "src/views/default";
 const Slides = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -11,16 +12,16 @@ const Slides = () => {
 
   const slides = [
     {
-      title: "ASIA",
-      component: <DashboardLayout1 />,
+      title: "Asia",
+      component: <Dashboard />,
     },
     {
-      title: "EUROPE",
-      component: <DashboardLayout1 />,
+      title: "Europe",
+      component: <Dashboard />,
     },
     {
       title: "North America",
-      component: <DashboardLayout1 />,
+      component: <Dashboard />,
     },
     {
       title: "South Asia",
@@ -54,6 +55,7 @@ const Slides = () => {
               }`} rounded-none`}
             >
               {activeSlide !== index && (
+                // eslint-disable-next-line jsx-a11y/anchor-is-valid
                 <a
                   href="#"
                   className="block h-full relative"
