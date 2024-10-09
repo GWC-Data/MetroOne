@@ -1,43 +1,76 @@
 import React from "react";
 
-const DashboardLayout1 = ({ name }) => {
+const DashboardLayout1 = () => {
   return (
-    <>
-      <div>
-        {/* <p className="text-white font-bold text-2xl  transform transition-all duration-300 hover:scale-105">
-          {" "}
-          {name}
-        </p> */}
+    <div className="bg-gray-50 p-8">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
+        <div className="text-right">
+          <p className="text-gray-600">Welcome, John!</p>
+          <p className="text-gray-600">You have new notifications.</p>
+        </div>
       </div>
-      <div className="flex flex-col h-screen bg-gray-100">
-        <main className="flex-1 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white border rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Content Area 1</h3>
-            <p className="text-gray-600">Some description text here.</p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Top Left Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-blue-500">
+          <h2 className="text-xl font-semibold text-gray-800">Total Revenue</h2>
+          <div className="h-32 bg-blue-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-blue-600">+20% This Month</div>
+        </div>
+
+        {/* Top Middle Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-green-500">
+          <h2 className="text-xl font-semibold text-gray-800">Profit Report</h2>
+          <div className="h-32 bg-green-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-green-600">
+            +15% This Quarter
           </div>
-          <div className="bg-red-500 text-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Dummy Component</h3>
-            <p>Red background content.</p>
+        </div>
+
+        {/* Top Right Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-yellow-500">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Order Statistics
+          </h2>
+          <div className="h-32 bg-yellow-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-yellow-600">8,258 Orders</div>
+        </div>
+
+        {/* Middle Left Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 col-span-1 md:col-span-2 border-l-4 border-purple-500">
+          <h2 className="text-xl font-semibold text-gray-800">Transactions</h2>
+          <div className="h-32 bg-purple-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-purple-600">
+            Latest Transactions
           </div>
-          <div className="bg-white border rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Content Area 2</h3>
-            <p className="text-gray-600">Some description text here.</p>
-          </div>
-          <div className="bg-white border rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Content Area 3</h3>
-            <p className="text-gray-600">Some description text here.</p>
-          </div>
-          <div className="bg-white border rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Content Area 4</h3>
-            <p className="text-gray-600">Some description text here.</p>
-          </div>
-          <div className="bg-white border rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-            <h3 className="font-bold text-lg">Content Area 5</h3>
-            <p className="text-gray-600">Some description text here.</p>
-          </div>
-        </main>
+        </div>
+
+        {/* Middle Right Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-red-500">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Activity Timeline
+          </h2>
+          <div className="h-32 bg-red-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-red-600">Recent Activities</div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="bg-white shadow-lg rounded-lg p-6 col-span-1 md:col-span-3 border-l-4 border-teal-500">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Browser & Operating System
+          </h2>
+          <div className="h-32 bg-teal-200 mt-4 rounded-lg"></div>{" "}
+          {/* Dummy Component */}
+          <div className="mt-2 text-right text-teal-600">User Insights</div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
