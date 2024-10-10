@@ -11,64 +11,58 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
+import CameraIcon from '@mui/icons-material/Camera';
 
-function PerformanceCard({ totalSales, rating, salesData }) {
+function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
+  console.log("currentData",src);
+  
   return (
-    <Card sx={{ maxWidth: 400, padding: 2,  backgroundImage: ` linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%)`,
-       
-    }} >
-      <CardContent style={{ color: 'white' }}>
-        <div className="top-performer" style={{ display: 'flex', alignItems: 'center', marginBottom: '16px',color:'white' }}>
-          <Button variant="contained" color="primary" style={{ marginRight: '8px' }}>
-            ▶
-          </Button>
-          {/* <Typography variant="h6">Top Performer</Typography> */}
-          <Typography variant="h4">{totalSales}</Typography>
+    <div className="flex flex-col w-[150px] p-4 bg-[#4b4f55] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+      {/* Top section with logo and label */}
+      <div className="mx-auto ">
+        {/* Logo or icon */}
+        <div className=" bg-gray-100 p-2 rounded-full">
+          {/* Placeholder for the actual icon */}
+          <img src={currentData.src} alt="Logo" className="h-6 w-6" />
+        </div>
+        {/* Top Performer label */}
+        
+      </div>
+
+      {/* Rating section */}
+      {/* <div className="mt-3 text-gray-800">
+        <p className="flex items-center text-xs">
+          <span className="text-gray-500">Rating:</span>
+          <span className="ml-1 text-yellow-500">★★★★☆</span>
+        </p>
+      </div> */}
+
+      {/* Sales information */}
+      <div className="mt-4 text-white">
+        <div className="flex justify-between items-center">
+          <div className="text-xs ">HWP</div>
+          <div className="text-sm font-medium">{totalSales} Cr</div>
         </div>
 
-        <div className="total-sales" style={{ marginBottom: '16px' }}>
-         
-          <Typography variant="body2">Total Sales</Typography>
+        <div className="flex justify-between items-center mt-2">
+          <div className="text-xs ">MU</div>
+          <div className="text-sm font-medium">{(currentData.salesData[0]).profit} Cr</div>
         </div>
 
-        <div className="rating" style={{ marginBottom: '16px' }}>
-          <Typography variant="body1">{rating}/5</Typography>
-          <div className="stars" style={{ display: 'flex' ,justifyContent:'center'}}>
-            {[...Array(Math.floor(rating))].map((_, index) => (
-              <span key={index} style={{ color: 'gold' }}>
-                ★
-              </span>
-            ))}
-            {[...Array(5 - Math.floor(rating))].map((_, index) => (
-              <span key={index} style={{ color: 'lightgray' }}>
-                ☆
-              </span>
-            ))}
-          </div>
+        <div className="flex justify-between items-center mt-2">
+          <div className="text-xs ">Contribution</div>
+          <div className="text-sm font-medium">{(currentData.salesData[0]).contribution}</div>
         </div>
+      </div>
 
-        <TableContainer>
-          <Table sx={{ color: 'white' }}>
-            <TableHead>
-              <TableRow>
-                <TableCell sx={{ color: 'white' }}>Sales</TableCell>
-                <TableCell sx={{ color: 'white' }}>Profit</TableCell>
-                <TableCell sx={{ color: 'white' }}>Contribution</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody sx={{ color: 'white' }}>
-              {salesData.map((data, index) => (
-                <TableRow key={index} sx={{ color: 'white' }} >
-                  <TableCell sx={{ color: 'white' }}>{data.sales}</TableCell>
-                  <TableCell sx={{ color: 'white' }}>{data.profit}</TableCell>
-                  <TableCell sx={{ color: 'white' }}>{data.contribution}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </CardContent>
-    </Card>
+      {/* Total sales info */}
+      <div className="flex justify-center mt-4">
+        <div className="bg-gray-200  text-center py-2 rounded-lg w-full">
+          <p className="text-xs font-semibold">{totalSales}</p>
+          <p className="text-xs">Revenue</p>
+        </div>
+      </div>
+    </div>
   );
 }
 

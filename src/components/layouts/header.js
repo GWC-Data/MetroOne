@@ -2,7 +2,7 @@ import DomoApi from "../../helpers/DomoAPI";
 import React, { useEffect, useState } from "react";
 import { FaExpand, FaCompress } from "react-icons/fa";
 
-const Header = () => {
+const Header = ({activeSlide}) => {
   const [currentUser, setCurrentUser] = useState("");
   const [isFullscreen, setIsFullscreen] = useState(false);
   const toggleFullScreen = () => {
@@ -27,9 +27,34 @@ const Header = () => {
     });
   }, []);
 
+  const slides = [
+    {
+      title: "Dedicated",
+     
+    },
+    {
+      title: "Central South",
+    
+    },
+    {
+      title: "Central North",
+    },
+    {
+      title: "South East",
+    },
+    {
+      title: "North East",
+    },
+    ,
+    {
+      title: "West",
+    }
+  ];
+
   return (
-    <header className="bg-gray-800">
+    <header className="bg-gray-800 hover:bg-white  hover:text-black text-white z-7 cursor-pointer">
       <div className="container mx-auto flex justify-between items-center h-16">
+        
         <div className="flex items-center">
           <img
             src="https://metroonelpsg.tovuti.io/images/HYeLmS721yumpCn1EWYt2sMTM2NTc1NjA4MzU1MA/Images/Logos/M1_Logo_-_Gray_on_Clear.png"
@@ -37,18 +62,20 @@ const Header = () => {
             className="h-14 w-auto rounded-full"
           />
         </div>
-
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold text-white">METRO ONE</h1>
+       
+         <div className="text-center ">
+          <h1 className="text-3xl font-semibold ">METRO ONE - {(slides[activeSlide]).title}</h1>
           {/* <p className="text-sm text-white">
             Loss Prevention Services Group
           </p> */}
         </div>
 
+       
+
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleFullScreen}
-            className="text-white hover:text-gray-300 transition-all duration-200"
+            className="hover:text-gray-300 transition-all duration-200"
           >
             {isFullscreen ? (
               <FaCompress className="h-5 w-5" />
@@ -58,10 +85,10 @@ const Header = () => {
           </button>
 
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-white text-sm font-bold">
+            <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-sm font-bold">
               {currentUser[0]?.toUpperCase()}
             </div>
-            <span className="text-white font-medium">{currentUser}</span>
+            <span className=" font-medium ">{currentUser}</span>
           </div>
         </div>
       </div>

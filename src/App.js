@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 
+import "./index.css";
+import video from "src/video/video.mp4"
 import AppLayout from "./components/layouts/applayout";
 
 import Slides from "./components/region/regionView";
+import { IndexPageView } from "./pages/page";
+
+
 
 function App() {
+
+  const [activeSlide, setActiveSlide] = useState(0);
   return (
     <HashRouter>
       <div className="App">
-        <AppLayout>
+      
+        <AppLayout activeSlide={activeSlide}>
           <Routes>
-            <Route path="/" element={<Slides />} />
+            <Route path="/" element={<IndexPageView activeSlide={activeSlide} setActiveSlide={setActiveSlide} />} />
           </Routes>
         </AppLayout>
       </div>
