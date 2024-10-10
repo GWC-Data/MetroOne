@@ -13,7 +13,7 @@ const Slides = () => {
     {
       title: "Asia",
       component: <Dashboard 
-        HWC={<iframe src="https://gwcteq-partner.domo.com/embed/card/private/mO8OG" width="194" height="97" marginheight="0" marginwidth="0" frameborder="0"></iframe>}
+        HPW={<iframe src="https://gwcteq-partner.domo.com/embed/card/private/mO8OG" width="194" height="97" marginheight="0" marginwidth="0" frameborder="0"></iframe>}
         total_customers={<iframe src="https://gwcteq-partner.domo.com/embed/card/private/jZ5ZP" width="194" height="97" marginheight="0" marginwidth="0" frameborder="0"></iframe>}
         MU_wOT={<iframe src="https://gwcteq-partner.domo.com/embed/card/private/k8B8N" width="194" height="97" marginheight="0" marginwidth="0" frameborder="0"></iframe>}
         MU_Dedicated={<iframe src="https://gwcteq-partner.domo.com/embed/card/private/lxXxg" width="194" height="97" marginheight="0" marginwidth="0" frameborder="0"></iframe>}

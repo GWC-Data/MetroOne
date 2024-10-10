@@ -16,7 +16,7 @@ import TaskCard from "src/views/default/components/TaskCard";
 import tableDataCheck from "./variables/tableDataCheck.json";
 import tableDataComplex from "./variables/tableDataComplex.json";
 
-const Dashboard = ({ HWC, total_customers, MU_wOT, MU_Dedicated, Fill_Rate, NBOT, PR, Gross, total_payroll, Revenue, COST_of_OT, gross_profit, Region_Dedicated, LOCATION_by_REVENUE, GP_vs_GP, Dark_Hours, HPW_by_STATE, PL_Dedicated, TOTAL_PAYROLL_vs_TOTAL_BILLED, Region_wise_dedicated_summary }) => {
+const Dashboard = ({ HPW, total_customers, MU_wOT, MU_Dedicated, Fill_Rate, NBOT, PR, Gross, total_payroll, Revenue, COST_of_OT, gross_profit, Region_Dedicated, LOCATION_by_REVENUE, GP_vs_GP, Dark_Hours, HPW_by_STATE, PL_Dedicated, TOTAL_PAYROLL_vs_TOTAL_BILLED, Region_wise_dedicated_summary }) => {
   return (
     <div className="p-2">
 
@@ -25,7 +25,7 @@ const Dashboard = ({ HWC, total_customers, MU_wOT, MU_Dedicated, Fill_Rate, NBOT
           <div className="grid grid-cols-4 gap-2">
             <div className="mt-2 bg-white">
               <h1 className="relative z-70 text-black left-2 font-bold text-2xl">HPW</h1>
-              {HWC}
+              {HPW}
             </div>
             <div className="mt-2 bg-white">
               <h1 className="relative z-70 text-black left-2 font-bold text-2xl">Total Customer</h1>
