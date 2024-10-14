@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Card, Typography, Box, Grid2 } from '@mui/material';
 import { PieChart, Pie, LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
-import { Scrollbar } from '../Scrollbar';
+import { Scrollbar } from '../scrollbar/Scrollbar';
 
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

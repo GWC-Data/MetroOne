@@ -1,5 +1,5 @@
 import Slides from "../components/region/regionView";
-const { Scrollbar } = require("../components/Scrollbar");
+const { Scrollbar } = require("../components/scrollbar/Scrollbar");
 
 export const IndexPageView = ({activeSlide,setActiveSlide}) => {
     return (

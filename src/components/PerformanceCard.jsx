@@ -41,12 +41,12 @@ function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
       <div className="mt-4 text-white">
         <div className="flex justify-between items-center">
           <div className="text-xs ">HWP</div>
-          <div className="text-sm font-medium">{totalSales} Cr</div>
+          <div className="text-sm font-medium">{totalSales} </div>
         </div>
 
         <div className="flex justify-between items-center mt-2">
           <div className="text-xs ">MU</div>
-          <div className="text-sm font-medium">{(currentData.salesData[0]).profit} Cr</div>
+          <div className="text-sm font-medium">{(currentData.salesData[0]).profit} </div>
         </div>
 
         <div className="flex justify-between items-center mt-2">

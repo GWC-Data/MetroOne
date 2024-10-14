@@ -4,7 +4,7 @@ import HorizontalBars from './Line2';
 import GridDemo from './Bar3/Bar3';
 import PieArcLabel from './Pie4/pie4';
 import PerformanceCard from '../PerformanceCard';
-import { Scrollbar } from '../Scrollbar';
+import { Scrollbar } from '../scrollbar/Scrollbar';
 import { NumberTickerDemo } from '../Number';
 
 import { RetroGridDemo } from '../Retrogrid';

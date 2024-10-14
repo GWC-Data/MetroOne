@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
-import PerformanceCard from './PerformanceCard';
+import PerformanceCard from '../PerformanceCard';
+import "./scroll.css"
 
 export function Scrollbar() {
   const images = [
@@ -57,19 +57,25 @@ export function Scrollbar() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeImage, setActiveImage] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [autoPlay, setAutoPlay] = useState(true); // Manage autoplay with state
+
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
 
   const handleImageClick = (data) => {
     if (currentData && currentData.src === data.src) {
+      // Deselecting the currently active image
       setIsVisible(false);
       setCurrentData(null);
       setActiveImage(null);
+      setAutoPlay(true); // Resume autoplay
     } else {
+      // Selecting a new image
       setCurrentData(data);
       setIsVisible(true);
       setActiveImage(data.src);
+      setAutoPlay(false); // Pause autoplay
     }
   };
 
@@ -85,19 +91,18 @@ export function Scrollbar() {
     display: 'flex',
     flexDirection: 'column', 
     opacity: isVisible ? 1 : 0,
-   right: isOpen ? 'translate-x-0' : 'translate-x-full',
-   
+    right: isOpen ? 'translate-x-0' : 'translate-x-full',
   };
 
   return (
     <div className="carousel-container mt-10 mr-2" style={{ position: 'relative' }}>
       <Carousel
-        showThumbs={false}
-        autoPlay
+        autoPlay={autoPlay} // Use state to control autoplay
         infiniteLoop
+        showThumbs={false}
         showStatus={false}
         showArrows={true}
-        interval={3000}
+        interval={2000}
         transitionTime={500}
         stopOnHover
         dynamicHeight={false}
@@ -106,32 +111,24 @@ export function Scrollbar() {
           <div 
             key={index} 
             onClick={() => handleImageClick(image)} 
-            onMouseLeave={() => setIsVisible(false)} 
             style={{ cursor: 'pointer', transform: activeImage === image.src ? 'scale(1)' : 'scale(1)', transition: 'transform 0.3s' }}
           >
-            <img src={image.src} alt={`Carousel ${index + 1}`} className='rounded-full mb-10 mr-2'  />
+            <img src={image.src} alt={`Carousel ${index + 1}`} className='rounded-full mb-10 mr-2' />
           </div>
         ))}
       </Carousel>
 
-    
-      <div style={performanceCardStyle} className='ml-10 mt-28 relative w-56'  onClick={() => setIsOpen(false)}>
-
-    {currentData && (
-      <PerformanceCard  
-     src={ currentData.src}
-        totalSales={currentData.totalSales} 
-        rating={currentData.rating} 
-        salesData={currentData.salesData} 
-        currentData = {currentData}
-      />
-    )}
-    
-    
- 
-</div>
-
-
+      <div style={performanceCardStyle} className='ml-10 mt-28 relative w-56' onClick={() => setIsOpen(false)}>
+        {currentData && (
+          <PerformanceCard  
+            src={currentData.src}
+            totalSales={currentData.totalSales} 
+            rating={currentData.rating} 
+            salesData={currentData.salesData} 
+            currentData={currentData}
+          />
+        )}
+      </div>
     </div>
   );
 }
