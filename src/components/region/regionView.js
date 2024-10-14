@@ -55,12 +55,12 @@ const Slides = ({activeSlide,setActiveSlide}) => {
   return (
     <div className="w-full bg-gray-900 h-screen relative overflow-hidden " >
       
-      <div className="overflow-hidden h-screen relative z-10">
+      <div className="overflow-hidden h-screen relative z-10 ">
         <ul className="flex h-screen">
           {slides.map((slide, index) => (
             <li
               key={index}
-              className={`list-none bg-gray-700 transition-all duration-500 ease-linear overflow-hidden h-full relative ${activeSlide === index ? "w-[100%]" : "w-[3%]"} rounded-none`}
+              className={`list-none bg-gray-700 transition-all duration-500 ease-linear overflow-hidden h-full relative font-poppins ${activeSlide === index ? "w-[100%]" : "w-[3%]"} rounded-none`}
             >
               {activeSlide !== index && (
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
