@@ -1,6 +1,8 @@
 import video from "src/video/video.mp4";
 
-const Dashboard = ({ Iframe }) => {
+const Dashboard = ({ Iframe ,isFullscreen,setIsFullscreen}) => {
+  console.log(isFullscreen,"isfullscreen");
+  
   return (
     <div className="relative p-2 overflow-hidden">
       <video
@@ -9,8 +11,8 @@ const Dashboard = ({ Iframe }) => {
          muted
         className="absolute inset-0 w-full h-screen object-cover z-0 opacity-[0.5]"
       />
-      <div className="relative z-10 mix-blend-screen -mt-[70px]">
-        <iframe 
+     
+     {!isFullscreen ?( <div className="relative z-10 mix-blend-screen"> <iframe 
           src={Iframe} 
           width="1010" 
           height="1248" 
@@ -18,13 +20,21 @@ const Dashboard = ({ Iframe }) => {
           marginWidth="0" 
           frameBorder="0" 
           
-          style={{
-            position: 'relative',
-            top: '-10%',  
-            
-          }} 
+         
         ></iframe>
-      </div>
+        </div>):( <div className="relative z-10 mix-blend-screen mt-10"><iframe 
+          src={Iframe} 
+          width="1150" 
+          height="1248" 
+          marginHeight="0" 
+          marginWidth="0" 
+          frameBorder="0" 
+          
+         
+        ></iframe></div>)}
+      
+
+      
     </div>
   );
 };

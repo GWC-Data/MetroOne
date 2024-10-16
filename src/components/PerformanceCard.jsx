@@ -13,8 +13,8 @@ import {
 } from '@mui/material';
 import CameraIcon from '@mui/icons-material/Camera';
 
-function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
-  console.log("currentData",src);
+function PerformanceCard({src, HWP, rating, salesData,currentData }) {
+  console.log("currentData",src,"HWP",currentData.HWP);
   
   return (
     <div className="flex flex-col w-[150px] p-4 bg-[#4b4f55] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -41,7 +41,7 @@ function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
       <div className="mt-4 text-white">
         <div className="flex justify-between items-center">
           <div className="text-xs ">HWP</div>
-          <div className="text-sm font-medium">{totalSales} </div>
+          <div className="text-sm font-medium">{currentData.HWP} </div>
         </div>
 
         <div className="flex justify-between items-center mt-2">
@@ -50,7 +50,7 @@ function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
         </div>
 
         <div className="flex justify-between items-center mt-2">
-          <div className="text-xs ">Contribution</div>
+          <div className="text-xs ">Dark Hours</div>
           <div className="text-sm font-medium">{(currentData.salesData[0]).contribution}</div>
         </div>
       </div>
@@ -58,8 +58,8 @@ function PerformanceCard({src, totalSales, rating, salesData,currentData }) {
       {/* Total sales info */}
       <div className="flex justify-center mt-4">
         <div className="bg-gray-200  text-center py-2 rounded-lg w-full">
-          <p className="text-xs font-semibold">{totalSales}</p>
-          <p className="text-xs">Revenue</p>
+          <p className="text-xs font-semibold">{(currentData.salesData[0]).Grossprofit}</p>
+          <p className="text-xs">Gross Profit</p>
         </div>
       </div>
     </div>

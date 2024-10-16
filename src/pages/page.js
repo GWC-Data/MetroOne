@@ -1,7 +1,7 @@
 import Slides from "../components/region/regionView";
 const { Scrollbar } = require("../components/scrollbar/Scrollbar");
 
-export const IndexPageView = ({activeSlide,setActiveSlide}) => {
+export const IndexPageView = ({activeSlide,setActiveSlide,isFullscreen ,setIsFullscreen}) => {
     return (
         <>
             <div className="flex  ">
@@ -9,7 +9,7 @@ export const IndexPageView = ({activeSlide,setActiveSlide}) => {
                     <Scrollbar />
                 </div>
                 <div className="col-span-9 bg-gray-600 w-full"> 
-                    <Slides activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+                    <Slides activeSlide={activeSlide} setActiveSlide={setActiveSlide}  isFullscreen={isFullscreen} setIsFullscreen={setIsFullscreen} />
                 </div>
             </div>
         </>

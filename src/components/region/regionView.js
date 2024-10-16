@@ -1,52 +1,66 @@
  import React, { useState, useEffect } from "react";
 import Dashboard from "src/views/default";
 import video from "src/video/video.mp4"
-
-const Slides = ({activeSlide,setActiveSlide}) => {
+import 'src/components/region/regionView.css'
+import map1 from '../region/images/map6.png'
+const Slides = ({activeSlide,setActiveSlide,isFullscreen}) => {
  
 
   const slides = [
     {
       title: "Dedicated",
+   
       component: (
         <Dashboard
           Iframe="https://gwcteq-partner.domo.com/app-studio/186226194/pages/1033949323"   
-            
+          isFullscreen={isFullscreen}
+         
             
         
         />
       ),
+
     },
     {
       title: "Central South",
+      background:map1,
       component: <Dashboard 
-      Iframe="https://gwcteq-partner.domo.com/app-studio/1379437992/pages/5034189"     
+      Iframe="https://gwcteq-partner.domo.com/app-studio/2004300864/pages/670184805" 
+      isFullscreen={isFullscreen}    
       />,
     },
     {
       title: "Central North",
+      background:map1,
       component: <Dashboard 
-      Iframe="https://gwcteq-partner.domo.com/app-studio/838568527/pages/1123110764"
+      Iframe="https://gwcteq-partner.domo.com/app-studio/1440025003/pages/1092454469"
+      isFullscreen={isFullscreen}
       />,
     },
     {
       title: "South East",
+      background:map1,
       component: <Dashboard 
-      Iframe="https://gwcteq-partner.domo.com/app-studio/1406412895/pages/1046802319"
+      Iframe="https://gwcteq-partner.domo.com/app-studio/1666970591/pages/1261279747"
+      isFullscreen={isFullscreen}
       />,
     },
     {
       title: "North East",
+      background:map1,
       component: <Dashboard
-      Iframe= "https://gwcteq-partner.domo.com/app-studio/1428772770/pages/1617402388"
+      Iframe= "https://gwcteq-partner.domo.com/app-studio/1439503876/pages/1320394140"
+      isFullscreen={isFullscreen}
       />,
 
     },
     ,
     {
       title: "West",
+      background:map1,
       component: <Dashboard 
-      Iframe="https://gwcteq-partner.domo.com/app-studio/616537776/pages/103325792"
+      Iframe="https://gwcteq-partner.domo.com/app-studio/156351525/pages/2016707196"
+      isFullscreen={isFullscreen}
       />,
 
     }
@@ -66,14 +80,14 @@ const Slides = ({activeSlide,setActiveSlide}) => {
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
                 <a
                   href="#"
-                  className="block h-full relative border bg-[url('https://metroonelpsg.com/wp-content/uploads/2022/01/Metro_One_LPSG3.jpg')]"
+                  className="block h-full relative border-2 border-gray-700  bg-gradient-to-r from-gray-600 to-[#7a7e83] "
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveSlide(index);
                   }}
                  
                 >
-                  <span className="text-white font-bold absolute top-[10%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center text-lg whitespace-nowrap w-full">
+                  <span className="text-white custom-font absolute top-[22%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center text-lg whitespace-nowrap w-full">
                     {slide.title}
                   </span>
                 </a>
@@ -86,6 +100,7 @@ const Slides = ({activeSlide,setActiveSlide}) => {
             </li>
           ))}
         </ul>
+        
       </div>
     </div>
   );

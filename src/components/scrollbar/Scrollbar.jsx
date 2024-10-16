@@ -8,46 +8,46 @@ export function Scrollbar() {
   const images = [
     {
       src: 'https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Amazon-512.png',
-      totalSales: "67",
+      HWP: " 1.03M",
       rating: 4,
       salesData: [
-        { sales: 'Target', profit: '13.89', contribution: '18%' },
+        { sales: 'Target', profit: '1.38', contribution: '651.27K',Grossprofit :'8.02M'},
         { sales: '67 Crores', profit: 'Crores', contribution: '' },
       ],
     },
     {
       src: 'https://ih1.redbubble.net/image.5467165484.5660/st,small,507x507-pad,600x600,f8f8f8.jpg',
-      totalSales: "45",
+      HWP: "93K",
       rating: 3,
       salesData: [
-        { sales: 'Target', profit: '10.00', contribution: '15%' },
+        { sales: 'Target', profit: '1.28', contribution: '4.8K',Grossprofit :' 16.04K' },
         { sales: '45 Crores', profit: 'Crores', contribution: '' },
       ],
     },
     {
       src: 'https://cdn.brandfetch.io/idEA_W4hs4/w/800/h/800/theme/dark/icon.jpeg?k=id64Mup7ac&t=1727182221083',
-      totalSales: "90",
+      HWP: "98K",
       rating: 5,
       salesData: [
-        { sales: 'Target', profit: '20.00', contribution: '25%' },
+        { sales: 'Target', profit: '1.42', contribution: '33.38K' ,Grossprofit :' 945.70K'},
         { sales: '90 Crores', profit: 'Crores', contribution: '' },
       ],
     },
     {
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFwR2aKZH9j4qxAqLFwVyUQbyjhq-3SnsJyw&s',
-      totalSales: "50",
+      HWP: "112.79K",
       rating: 2,
       salesData: [
-        { sales: 'Target', profit: '5.00', contribution: '10%' },
+        { sales: 'Target', profit: '0.61', contribution: '44.1K',Grossprofit :'1.04M' },
         { sales: '50 Crores', profit: 'Crores', contribution: '' },
       ],
     },
     {
       src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5U5G-dGL9YfCejzy1sKzvGYPEdb9bWOqyeA&s',
-      totalSales: "30",
+      HWP: "154.51K",
       rating: 3,
       salesData: [
-        { sales: 'Target', profit: '3.00', contribution: '8%' },
+        { sales: 'Target', profit: '0.68', contribution: '16.56K',Grossprofit :'119.06K' },
         { sales: '30 Crores', profit: 'Crores', contribution: '' },
       ],
     }

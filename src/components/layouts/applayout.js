@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./header";
 
-const AppLayout = ({activeSlide, children }) => {
+const AppLayout = ({activeSlide, children,isFullscreen, setIsFullscreen }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header activeSlide={activeSlide} />
+      <Header activeSlide={activeSlide} isFullscreen={isFullscreen} setIsFullscreen={setIsFullscreen}/>
 
       <main className=" ">
         <div className="">{children}</div>

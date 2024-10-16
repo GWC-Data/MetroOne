@@ -15,13 +15,14 @@ import { IndexPageView } from "./pages/page";
 function App() {
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   return (
     <HashRouter>
       <div className="App">
       
-        <AppLayout activeSlide={activeSlide}>
+        <AppLayout activeSlide={activeSlide} isFullscreen ={isFullscreen} setIsFullscreen={setIsFullscreen}>
           <Routes>
-            <Route path="/" element={<IndexPageView activeSlide={activeSlide} setActiveSlide={setActiveSlide} />} />
+            <Route path="/" element={<IndexPageView activeSlide={activeSlide} setActiveSlide={setActiveSlide} isFullscreen ={isFullscreen} setIsFullscreen={setIsFullscreen} />} />
           </Routes>
         </AppLayout>
       </div>

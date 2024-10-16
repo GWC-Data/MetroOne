@@ -2,9 +2,9 @@ import DomoApi from "../../helpers/DomoAPI";
 import React, { useEffect, useState } from "react";
 import { FaExpand, FaCompress } from "react-icons/fa";
 
-const Header = ({activeSlide}) => {
+const Header = ({activeSlide,isFullscreen,setIsFullscreen}) => {
   const [currentUser, setCurrentUser] = useState("");
-  const [isFullscreen, setIsFullscreen] = useState(false);
+
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
